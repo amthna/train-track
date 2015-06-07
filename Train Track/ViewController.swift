@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Tix 2 Ryde
+//  Train Track
 //
 //  Created by Andrew Mathena on 6/3/15.
 //  Copyright (c) 2015 Andrew Mathena. All rights reserved.

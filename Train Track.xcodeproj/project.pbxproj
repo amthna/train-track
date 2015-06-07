@@ -13,6 +13,7 @@
 		9E391D371B23ABC400B6C568 /* Train_TrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E391D361B23ABC400B6C568 /* Train_TrackTests.swift */; };
 		9E391D421B23AD7400B6C568 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E391D401B23AD7400B6C568 /* Main.storyboard */; };
 		9E391D451B23AD8700B6C568 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E391D431B23AD8700B6C568 /* LaunchScreen.xib */; };
+		9EBFF5B71B23FA26003C39DA /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		9E391D361B23ABC400B6C568 /* Train_TrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train_TrackTests.swift; sourceTree = "<group>"; };
 		9E391D411B23AD7400B6C568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Tix 2 Ryde/Tix 2 Ryde/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		9E391D441B23AD8700B6C568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "../../Tix 2 Ryde/Tix 2 Ryde/Base.lproj/LaunchScreen.xib"; sourceTree = "<group>"; };
+		9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				9E391D201B23ABC400B6C568 /* AppDelegate.swift */,
 				9E391D221B23ABC400B6C568 /* ViewController.swift */,
+				9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */,
 				9E391D401B23AD7400B6C568 /* Main.storyboard */,
 				9E391D271B23ABC400B6C568 /* Images.xcassets */,
 				9E391D431B23AD8700B6C568 /* LaunchScreen.xib */,
@@ -214,6 +217,7 @@
 			files = (
 				9E391D231B23ABC400B6C568 /* ViewController.swift in Sources */,
 				9E391D211B23ABC400B6C568 /* AppDelegate.swift in Sources */,
+				9EBFF5B71B23FA26003C39DA /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
