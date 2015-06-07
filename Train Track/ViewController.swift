@@ -29,10 +29,49 @@ class ViewController: UIViewController {
     @IBOutlet weak var smoke4: UIImageView!
     @IBOutlet weak var smoke5: UIImageView!
     @IBOutlet weak var smoke6: UIImageView!
+    @IBOutlet weak var bground: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var bground_container: UIView!
+    
+    let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if (delegate.introw != true) {
+            self.bground.alpha = 1.0
+            self.logo.alpha = 1.0
+        } else {
+            self.bground_container.hidden = true
+            self.logo.hidden = true
+        }
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        
+        if (delegate.introw != true) {
+            super.viewDidAppear(animated)
+            
+            UIView.animateWithDuration(0.8, animations: {
+                self.logo.alpha = 0.0
+                },
+                completion: {
+                    (value: Bool) in
+                    UIView.animateWithDuration(0.2, animations: {
+                        self.bground_container.alpha = 0.0
+                        },
+                        completion: {
+                            (value: Bool) in
+                            self.logo.hidden = true
+                            self.bground_container.hidden = true
+                    })
+            })
+            delegate.introw = true;
+        } else {
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
