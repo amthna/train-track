@@ -42,9 +42,11 @@ class ViewController: UIViewController {
         if (delegate.introw != true) {
             self.bground.alpha = 1.0
             self.logo.alpha = 1.0
+            println("one")
         } else {
             self.bground_container.hidden = true
             self.logo.hidden = true
+            println("two")
         }
     }
     
@@ -55,7 +57,7 @@ class ViewController: UIViewController {
         if (delegate.introw != true) {
             super.viewDidAppear(animated)
             
-            UIView.animateWithDuration(1.0, animations: {
+            UIView.animateWithDuration(1.5, animations: {
                 self.logo.alpha = 0.0
                 },
                 completion: {
