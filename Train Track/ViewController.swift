@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bground: UIImageView!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var bground_container: UIView!
+    @IBOutlet weak var dude: UILabel!
     
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -54,12 +55,12 @@ class ViewController: UIViewController {
         if (delegate.introw != true) {
             super.viewDidAppear(animated)
             
-            UIView.animateWithDuration(0.8, animations: {
+            UIView.animateWithDuration(1.0, animations: {
                 self.logo.alpha = 0.0
                 },
                 completion: {
                     (value: Bool) in
-                    UIView.animateWithDuration(0.2, animations: {
+                    UIView.animateWithDuration(0.3, animations: {
                         self.bground_container.alpha = 0.0
                         },
                         completion: {
@@ -85,7 +86,7 @@ class ViewController: UIViewController {
         
         var blah = tren1
         var score = z1
-        var fucc = 0
+        var friend = 0
         var totScore = 0
         
         func wobble(x: UIImageView){
@@ -95,9 +96,33 @@ class ViewController: UIViewController {
             })
         }
         
+        let dudePush = { (scorex: String) -> () in
+            if scorex.toInt() > 300 && self.dude.hidden == true {
+                self.dude.transform = CGAffineTransformMakeTranslation(-200, 0)
+                self.dude.hidden = false
+                UIView.animateWithDuration(0.4, animations: {
+                    self.dude.transform = CGAffineTransformMakeTranslation(0, 0)
+                })
+            } else if scorex.toInt() > 300 && self.dude.hidden == false {
+                
+            } else {
+                
+                UIView.animateWithDuration(0.4, animations: {
+                    self.dude.transform = CGAffineTransformMakeTranslation(-200, 0)
+                    },
+                    completion: {
+                        (value: Bool) in
+                        self.dude.hidden = true
+                })
+            }
+        }
+    
+    
+    
+    
         func scoreKeep(x: UILabel) {
-            fucc = x.text!.toInt()! - 1
-            x.text = String(fucc)
+            friend = x.text!.toInt()! - 1
+            x.text = String(friend)
             
             switch x {
             case z1:
@@ -120,6 +145,10 @@ class ViewController: UIViewController {
                 totalScore.text = String(totScore)
             default: break
             }
+            
+            dudePush(totalScore.text!)
+            
+
             
         }
         
@@ -165,6 +194,14 @@ class ViewController: UIViewController {
         z4.text = "0"
         z5.text = "0"
         z6.text = "0"
+        
+        UIView.animateWithDuration(0.4, animations: {
+            self.dude.transform = CGAffineTransformMakeTranslation(-200, 0)
+            },
+            completion: {
+                (value: Bool) in
+                self.dude.hidden = true
+        })
     }
     
     @IBAction func plus(sender: UIButton) {
@@ -173,7 +210,7 @@ class ViewController: UIViewController {
         
         var blah = tren1
         var score = z1
-        var fucc = 0
+        var friend = 0
         var totScore = 0
         var smokee = smoke3
         
@@ -197,9 +234,30 @@ class ViewController: UIViewController {
             })
         }
         
+        let dudePush = { (scorex: String) -> () in
+            if scorex.toInt() > 300 && self.dude.hidden == true {
+                self.dude.transform = CGAffineTransformMakeTranslation(-200, 0)
+                self.dude.hidden = false
+                UIView.animateWithDuration(0.4, animations: {
+                    self.dude.transform = CGAffineTransformMakeTranslation(0, 0)
+                })
+            } else if scorex.toInt() > 300 && self.dude.hidden == false {
+                
+            } else {
+                
+                UIView.animateWithDuration(0.4, animations: {
+                    self.dude.transform = CGAffineTransformMakeTranslation(-200, 0)
+                    },
+                    completion: {
+                        (value: Bool) in
+                        self.dude.hidden = true
+                })
+            }
+        }
+        
         func scoreKeep(x: UILabel) {
-            fucc = x.text!.toInt()! + 1
-            x.text = String(fucc)
+            friend = x.text!.toInt()! + 1
+            x.text = String(friend)
             
             switch x {
             case z1:
@@ -222,6 +280,8 @@ class ViewController: UIViewController {
                 totalScore.text = String(totScore)
             default: break
             }
+            
+            dudePush(totalScore.text!)
             
         }
         
