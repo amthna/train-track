@@ -14,13 +14,34 @@ class ContactViewController: UIViewController {
     @IBOutlet weak var info: UIImageView!
     @IBOutlet weak var thanks: UIImageView!
     
+    @IBOutlet weak var tomas_switch: UISwitch!
+    @IBOutlet weak var tomas_label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //for settings togglez
+        var defaults = NSUserDefaults.standardUserDefaults()
+
+        if (defaults.objectForKey("SwitchState") != nil) {
+            tomas_switch.on = defaults.boolForKey("SwitchState")
+        }
+        
         self.bro.transform = CGAffineTransformMakeTranslation(200, 0)
         self.info.transform = CGAffineTransformMakeTranslation(-200, 0)
         self.thanks.alpha = 0.0
+    }
+    @IBAction func togg(sender: UISwitch) {
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        if tomas_switch.on {
+            defaults.setBool(true, forKey: "SwitchState")
+        } else {
+            defaults.setBool(false, forKey: "SwitchState")
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

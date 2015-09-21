@@ -13,6 +13,8 @@
 		9E391D371B23ABC400B6C568 /* Train_TrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E391D361B23ABC400B6C568 /* Train_TrackTests.swift */; };
 		9E391D421B23AD7400B6C568 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E391D401B23AD7400B6C568 /* Main.storyboard */; };
 		9E391D451B23AD8700B6C568 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E391D431B23AD8700B6C568 /* LaunchScreen.xib */; };
+		9E72B2611BA4B5EF006F65CA /* horn2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E72B2601BA4B5EF006F65CA /* horn2.wav */; };
+		9E72B2691BA8FC92006F65CA /* buzza.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E72B2681BA8FC92006F65CA /* buzza.wav */; };
 		9EBFF5B71B23FA26003C39DA /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		9E391D361B23ABC400B6C568 /* Train_TrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train_TrackTests.swift; sourceTree = "<group>"; };
 		9E391D411B23AD7400B6C568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Tix 2 Ryde/Tix 2 Ryde/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		9E391D441B23AD8700B6C568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "../../Tix 2 Ryde/Tix 2 Ryde/Base.lproj/LaunchScreen.xib"; sourceTree = "<group>"; };
+		9E72B2601BA4B5EF006F65CA /* horn2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = horn2.wav; path = ../../../Desktop/horn2.wav; sourceTree = "<group>"; };
+		9E72B2681BA8FC92006F65CA /* buzza.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = buzza.wav; path = ../../../Desktop/buzza.wav; sourceTree = "<group>"; };
 		9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +83,8 @@
 		9E391D1D1B23ABC400B6C568 /* Train Track */ = {
 			isa = PBXGroup;
 			children = (
+				9E72B2601BA4B5EF006F65CA /* horn2.wav */,
+				9E72B2681BA8FC92006F65CA /* buzza.wav */,
 				9E391D201B23ABC400B6C568 /* AppDelegate.swift */,
 				9E391D221B23ABC400B6C568 /* ViewController.swift */,
 				9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */,
@@ -159,11 +165,13 @@
 		9E391D131B23ABC400B6C568 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Andrew Mathena";
 				TargetAttributes = {
 					9E391D1A1B23ABC400B6C568 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 6EBXTUVJ28;
 					};
 					9E391D2F1B23ABC400B6C568 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -195,9 +203,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E72B2611BA4B5EF006F65CA /* horn2.wav in Resources */,
 				9E391D421B23AD7400B6C568 /* Main.storyboard in Resources */,
 				9E391D451B23AD8700B6C568 /* LaunchScreen.xib in Resources */,
 				9E391D281B23ABC400B6C568 /* Images.xcassets in Resources */,
+				9E72B2691BA8FC92006F65CA /* buzza.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,10 +354,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Train Track/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -355,10 +368,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Train Track/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

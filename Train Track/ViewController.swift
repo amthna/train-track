@@ -7,21 +7,35 @@
 //
 
 import UIKit
+import AVFoundation
+import AudioToolbox
 
 class ViewController: UIViewController {
     
+    var pianoSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("buzza", ofType: "wav")!)
+    var pianoSound2 = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("horn2", ofType: "wav")!)
+    var audioPlayer = AVAudioPlayer()
+    var audioPlayer2 = AVAudioPlayer()
+    
+    //train images (for animations)
     @IBOutlet weak var tren1: UIImageView!
     @IBOutlet weak var tren2: UIImageView!
     @IBOutlet weak var tren3: UIImageView!
     @IBOutlet weak var tren4: UIImageView!
     @IBOutlet weak var tren5: UIImageView!
     @IBOutlet weak var tren6: UIImageView!
+    @IBOutlet weak var tren7: UIImageView!
+    @IBOutlet weak var tren8: UIImageView!
+    
+    //scores n smokes n crap
     @IBOutlet weak var z1: UILabel!
     @IBOutlet weak var z2: UILabel!
     @IBOutlet weak var z3: UILabel!
     @IBOutlet weak var z4: UILabel!
     @IBOutlet weak var z5: UILabel!
     @IBOutlet weak var z6: UILabel!
+    @IBOutlet weak var z7: UILabel!
+    @IBOutlet weak var z8: UILabel!
     @IBOutlet weak var totalScore: UILabel!
     @IBOutlet weak var smoke3: UIImageView!
     @IBOutlet weak var smoke1: UIImageView!
@@ -29,6 +43,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var smoke4: UIImageView!
     @IBOutlet weak var smoke5: UIImageView!
     @IBOutlet weak var smoke6: UIImageView!
+    @IBOutlet weak var smoke7: UIImageView!
+    @IBOutlet weak var smoke8: UIImageView!
     @IBOutlet weak var bground: UIImageView!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var bground_container: UIView!
@@ -38,17 +54,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        audioPlayer = AVAudioPlayer(contentsOfURL: pianoSound, error: nil)
+        audioPlayer.prepareToPlay()
+        audioPlayer2 = AVAudioPlayer(contentsOfURL: pianoSound2, error: nil)
+        audioPlayer2.prepareToPlay()
         // Do any additional setup after loading the view, typically from a nib.
         if (delegate.introw != true) {
             self.bground.alpha = 1.0
             self.logo.alpha = 1.0
-            println("one")
+           // println("one")
         } else {
             self.bground_container.hidden = true
             self.logo.hidden = true
-            println("two")
+           // println("two")
         }
     }
+    
     
     
     override func viewDidAppear(animated: Bool) {
@@ -83,6 +105,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func minus(sender: UIButton) {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        if (defaults.boolForKey("SwitchState") == true) {
+            if audioPlayer2.playing {
+                audioPlayer2.stop()
+                audioPlayer2.currentTime = 0.0
+                audioPlayer2.play()
+            } else {
+                audioPlayer2.play()
+            }
+            
+        }
         
         let digit = sender.currentTitle!
         
@@ -145,6 +179,12 @@ class ViewController: UIViewController {
             case z6:
                 totScore = totalScore.text!.toInt()! - 15
                 totalScore.text = String(totScore)
+            case z7:
+                totScore = totalScore.text!.toInt()! - 18
+                totalScore.text = String(totScore)
+            case z8:
+                totScore = totalScore.text!.toInt()! - 21
+                totalScore.text = String(totScore)
             default: break
             }
             
@@ -184,6 +224,16 @@ class ViewController: UIViewController {
             score = z6
             scoreKeep(score)
             wobble(blah)
+        } else if digit == "minus7" && z7.text!.toInt()! > 0 {
+            blah = tren7
+            score = z7
+            scoreKeep(score)
+            wobble(blah)
+        } else if digit == "minus8" && z8.text!.toInt()! > 0 {
+            blah = tren8
+            score = z8
+            scoreKeep(score)
+            wobble(blah)
         }
         
     }
@@ -196,6 +246,8 @@ class ViewController: UIViewController {
         z4.text = "0"
         z5.text = "0"
         z6.text = "0"
+        z7.text = "0"
+        z8.text = "0"
         
         UIView.animateWithDuration(0.4, animations: {
             self.dude.transform = CGAffineTransformMakeTranslation(-200, 0)
@@ -209,13 +261,24 @@ class ViewController: UIViewController {
     @IBAction func plus(sender: UIButton) {
         
         let digit = sender.currentTitle!
-        
+        var defaults = NSUserDefaults.standardUserDefaults()
         var blah = tren1
         var score = z1
         var friend = 0
         var totScore = 0
         var smokee = smoke3
         
+        if (defaults.boolForKey("SwitchState") == true) {
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            if audioPlayer.playing {
+                audioPlayer.stop()
+                audioPlayer.currentTime = 0.0
+                audioPlayer.play()
+            } else {
+                audioPlayer.play()
+            }
+        }
+    
         func smokePoof(x: UIImageView){
             
             x.hidden = false
@@ -280,6 +343,12 @@ class ViewController: UIViewController {
             case z6:
                 totScore = totalScore.text!.toInt()! + 15
                 totalScore.text = String(totScore)
+            case z7:
+                totScore = totalScore.text!.toInt()! + 18
+                totalScore.text = String(totScore)
+            case z8:
+                totScore = totalScore.text!.toInt()! + 21
+                totalScore.text = String(totScore)
             default: break
             }
             
@@ -311,6 +380,14 @@ class ViewController: UIViewController {
             blah = tren6
             score = z6
             smokee = smoke6
+        } else if digit == "plus7" {
+            blah = tren7
+            score = z7
+             smokee = smoke7
+        }else if digit == "plus8" {
+            blah = tren8
+            score = z8
+            smokee = smoke8
         }
         
         scoreKeep(score)
