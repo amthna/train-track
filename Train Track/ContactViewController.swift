@@ -21,21 +21,25 @@ class ContactViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        tomas_label.adjustsFontSizeToFitWidth = true
         //for settings togglez
-        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
 
         if (defaults.objectForKey("SwitchState") != nil) {
             tomas_switch.on = defaults.boolForKey("SwitchState")
+        } else {
+            tomas_switch.on = false
         }
         
         self.bro.transform = CGAffineTransformMakeTranslation(200, 0)
         self.info.transform = CGAffineTransformMakeTranslation(-200, 0)
         self.thanks.alpha = 0.0
+        self.tomas_switch.alpha = 0.0
+        self.tomas_label.alpha = 0.0
     }
     @IBAction func togg(sender: UISwitch) {
         
-        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         
         if tomas_switch.on {
             defaults.setBool(true, forKey: "SwitchState")
@@ -50,6 +54,8 @@ class ContactViewController: UIViewController {
         UIView.animateWithDuration(0.4, animations: {
             self.bro.transform = CGAffineTransformMakeTranslation(0, 0)
             self.info.transform = CGAffineTransformMakeTranslation(0, 0)
+            self.tomas_label.alpha = 1.0
+            self.tomas_switch.alpha = 1.0
             self.thanks.alpha = 1.0
         })
     }

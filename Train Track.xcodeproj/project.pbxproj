@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		9E391D211B23ABC400B6C568 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E391D201B23ABC400B6C568 /* AppDelegate.swift */; };
 		9E391D231B23ABC400B6C568 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E391D221B23ABC400B6C568 /* ViewController.swift */; };
-		9E391D281B23ABC400B6C568 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E391D271B23ABC400B6C568 /* Images.xcassets */; };
 		9E391D371B23ABC400B6C568 /* Train_TrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E391D361B23ABC400B6C568 /* Train_TrackTests.swift */; };
 		9E391D421B23AD7400B6C568 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E391D401B23AD7400B6C568 /* Main.storyboard */; };
 		9E391D451B23AD8700B6C568 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E391D431B23AD8700B6C568 /* LaunchScreen.xib */; };
+		9E48A5261BB0E77F00203E91 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E48A5251BB0E77F00203E91 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		9E72B2611BA4B5EF006F65CA /* horn2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E72B2601BA4B5EF006F65CA /* horn2.wav */; };
 		9E72B2691BA8FC92006F65CA /* buzza.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E72B2681BA8FC92006F65CA /* buzza.wav */; };
 		9EBFF5B71B23FA26003C39DA /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */; };
@@ -33,12 +33,12 @@
 		9E391D1F1B23ABC400B6C568 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E391D201B23ABC400B6C568 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E391D221B23ABC400B6C568 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9E391D271B23ABC400B6C568 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9E391D301B23ABC400B6C568 /* Train TrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Train TrackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E391D351B23ABC400B6C568 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E391D361B23ABC400B6C568 /* Train_TrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train_TrackTests.swift; sourceTree = "<group>"; };
 		9E391D411B23AD7400B6C568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Tix 2 Ryde/Tix 2 Ryde/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		9E391D441B23AD8700B6C568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "../../Tix 2 Ryde/Tix 2 Ryde/Base.lproj/LaunchScreen.xib"; sourceTree = "<group>"; };
+		9E48A5251BB0E77F00203E91 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 		9E72B2601BA4B5EF006F65CA /* horn2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = horn2.wav; path = ../../../Desktop/horn2.wav; sourceTree = "<group>"; };
 		9E72B2681BA8FC92006F65CA /* buzza.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = buzza.wav; path = ../../../Desktop/buzza.wav; sourceTree = "<group>"; };
 		9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +89,6 @@
 				9E391D221B23ABC400B6C568 /* ViewController.swift */,
 				9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */,
 				9E391D401B23AD7400B6C568 /* Main.storyboard */,
-				9E391D271B23ABC400B6C568 /* Images.xcassets */,
 				9E391D431B23AD8700B6C568 /* LaunchScreen.xib */,
 				9E391D1E1B23ABC400B6C568 /* Supporting Files */,
 			);
@@ -99,6 +98,7 @@
 		9E391D1E1B23ABC400B6C568 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9E48A5251BB0E77F00203E91 /* Images.xcassets */,
 				9E391D1F1B23ABC400B6C568 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -165,6 +165,7 @@
 		9E391D131B23ABC400B6C568 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Andrew Mathena";
@@ -204,9 +205,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E72B2611BA4B5EF006F65CA /* horn2.wav in Resources */,
+				9E48A5261BB0E77F00203E91 /* Images.xcassets in Resources */,
 				9E391D421B23AD7400B6C568 /* Main.storyboard in Resources */,
 				9E391D451B23AD8700B6C568 /* LaunchScreen.xib in Resources */,
-				9E391D281B23ABC400B6C568 /* Images.xcassets in Resources */,
 				9E72B2691BA8FC92006F65CA /* buzza.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

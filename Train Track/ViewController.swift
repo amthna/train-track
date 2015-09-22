@@ -52,13 +52,15 @@ class ViewController: UIViewController {
     
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        audioPlayer = AVAudioPlayer(contentsOfURL: pianoSound, error: nil)
+        audioPlayer = try! AVAudioPlayer(contentsOfURL: pianoSound)
         audioPlayer.prepareToPlay()
-        audioPlayer2 = AVAudioPlayer(contentsOfURL: pianoSound2, error: nil)
+        audioPlayer2 = try! AVAudioPlayer(contentsOfURL: pianoSound2)
         audioPlayer2.prepareToPlay()
+        
         // Do any additional setup after loading the view, typically from a nib.
         if (delegate.introw != true) {
             self.bground.alpha = 1.0
@@ -133,13 +135,13 @@ class ViewController: UIViewController {
         }
         
         let dudePush = { (scorex: String) -> () in
-            if scorex.toInt() > 300 && self.dude.hidden == true {
+            if Int(scorex) > 300 && self.dude.hidden == true {
                 self.dude.transform = CGAffineTransformMakeTranslation(-200, 0)
                 self.dude.hidden = false
                 UIView.animateWithDuration(0.4, animations: {
                     self.dude.transform = CGAffineTransformMakeTranslation(0, 0)
                 })
-            } else if scorex.toInt() > 300 && self.dude.hidden == false {
+            } else if Int(scorex) > 300 && self.dude.hidden == false {
                 
             } else {
                 
@@ -157,33 +159,33 @@ class ViewController: UIViewController {
     
     
         func scoreKeep(x: UILabel) {
-            friend = x.text!.toInt()! - 1
+            friend = Int(x.text!)! - 1
             x.text = String(friend)
             
             switch x {
             case z1:
-                totScore = totalScore.text!.toInt()! - 1
+                totScore = Int(totalScore.text!)! - 1
                 totalScore.text = String(totScore)
             case z2:
-                totScore = totalScore.text!.toInt()! - 2
+                totScore = Int(totalScore.text!)! - 2
                 totalScore.text = String(totScore)
             case z3:
-                totScore = totalScore.text!.toInt()! - 4
+                totScore = Int(totalScore.text!)! - 4
                 totalScore.text = String(totScore)
             case z4:
-                totScore = totalScore.text!.toInt()! - 7
+                totScore = Int(totalScore.text!)! - 7
                 totalScore.text = String(totScore)
             case z5:
-                totScore = totalScore.text!.toInt()! - 10
+                totScore = Int(totalScore.text!)! - 10
                 totalScore.text = String(totScore)
             case z6:
-                totScore = totalScore.text!.toInt()! - 15
+                totScore = Int(totalScore.text!)! - 15
                 totalScore.text = String(totScore)
             case z7:
-                totScore = totalScore.text!.toInt()! - 18
+                totScore = Int(totalScore.text!)! - 18
                 totalScore.text = String(totScore)
             case z8:
-                totScore = totalScore.text!.toInt()! - 21
+                totScore = Int(totalScore.text!)! - 21
                 totalScore.text = String(totScore)
             default: break
             }
@@ -194,42 +196,42 @@ class ViewController: UIViewController {
             
         }
         
-        if digit == "minus1" && z1.text!.toInt()! > 0 {
+        if digit == "minus1" && Int(z1.text!)! > 0 {
             blah = tren1
             score = z1
             scoreKeep(score)
             wobble(blah)
-        } else if digit == "minus2" && z2.text!.toInt()! > 0 {
+        } else if digit == "minus2" && Int(z2.text!)! > 0 {
             blah = tren2
             score = z2
             scoreKeep(score)
             wobble(blah)
-        } else if digit == "minus3" && z3.text!.toInt()! > 0 {
+        } else if digit == "minus3" && Int(z3.text!)! > 0 {
             blah = tren3
             score = z3
             scoreKeep(score)
             wobble(blah)
-        } else if digit == "minus4" && z4.text!.toInt()! > 0 {
+        } else if digit == "minus4" && Int(z4.text!)! > 0 {
             blah = tren4
             score = z4
             scoreKeep(score)
             wobble(blah)
-        } else if digit == "minus5" && z5.text!.toInt()! > 0 {
+        } else if digit == "minus5" && Int(z5.text!)! > 0 {
             blah = tren5
             score = z5
             scoreKeep(score)
             wobble(blah)
-        } else if digit == "minus6" && z6.text!.toInt()! > 0 {
+        } else if digit == "minus6" && Int(z6.text!)! > 0 {
             blah = tren6
             score = z6
             scoreKeep(score)
             wobble(blah)
-        } else if digit == "minus7" && z7.text!.toInt()! > 0 {
+        } else if digit == "minus7" && Int(z7.text!)! > 0 {
             blah = tren7
             score = z7
             scoreKeep(score)
             wobble(blah)
-        } else if digit == "minus8" && z8.text!.toInt()! > 0 {
+        } else if digit == "minus8" && Int(z8.text!)! > 0 {
             blah = tren8
             score = z8
             scoreKeep(score)
@@ -284,29 +286,29 @@ class ViewController: UIViewController {
             x.hidden = false
             
             UIView.animateWithDuration(0.5, delay: 0.0, options: .TransitionCurlDown, animations: {
-                var grow = CGAffineTransformMakeScale(4, 4)
-                var move = CGAffineTransformMakeTranslation(0, -40)
+                let grow = CGAffineTransformMakeScale(4, 4)
+                let move = CGAffineTransformMakeTranslation(0, -40)
                 x.transform = CGAffineTransformConcat(grow, move)
                 x.alpha = 0.0
                 },
                 completion: {
                     (value: Bool) in
                     x.hidden = true
-                    var grow = CGAffineTransformMakeScale(1, 1)
-                    var move = CGAffineTransformMakeTranslation(0, 0)
+                    let grow = CGAffineTransformMakeScale(1, 1)
+                    let move = CGAffineTransformMakeTranslation(0, 0)
                     x.transform = CGAffineTransformConcat(grow, move)
                     x.alpha = 1.0
             })
         }
         
         let dudePush = { (scorex: String) -> () in
-            if scorex.toInt() > 300 && self.dude.hidden == true {
+            if Int(scorex) > 300 && self.dude.hidden == true {
                 self.dude.transform = CGAffineTransformMakeTranslation(-200, 0)
                 self.dude.hidden = false
                 UIView.animateWithDuration(0.4, animations: {
                     self.dude.transform = CGAffineTransformMakeTranslation(0, 0)
                 })
-            } else if scorex.toInt() > 300 && self.dude.hidden == false {
+            } else if Int(scorex) > 300 && self.dude.hidden == false {
                 
             } else {
                 
@@ -321,33 +323,33 @@ class ViewController: UIViewController {
         }
         
         func scoreKeep(x: UILabel) {
-            friend = x.text!.toInt()! + 1
+            friend = Int(x.text!)! + 1
             x.text = String(friend)
             
             switch x {
             case z1:
-                totScore = totalScore.text!.toInt()! + 1
+                totScore = Int(totalScore.text!)! + 1
                 totalScore.text = String(totScore)
             case z2:
-                totScore = totalScore.text!.toInt()! + 2
+                totScore = Int(totalScore.text!)! + 2
                 totalScore.text = String(totScore)
             case z3:
-                totScore = totalScore.text!.toInt()! + 4
+                totScore = Int(totalScore.text!)! + 4
                 totalScore.text = String(totScore)
             case z4:
-                totScore = totalScore.text!.toInt()! + 7
+                totScore = Int(totalScore.text!)! + 7
                 totalScore.text = String(totScore)
             case z5:
-                totScore = totalScore.text!.toInt()! + 10
+                totScore = Int(totalScore.text!)! + 10
                 totalScore.text = String(totScore)
             case z6:
-                totScore = totalScore.text!.toInt()! + 15
+                totScore = Int(totalScore.text!)! + 15
                 totalScore.text = String(totScore)
             case z7:
-                totScore = totalScore.text!.toInt()! + 18
+                totScore = Int(totalScore.text!)! + 18
                 totalScore.text = String(totScore)
             case z8:
-                totScore = totalScore.text!.toInt()! + 21
+                totScore = Int(totalScore.text!)! + 21
                 totalScore.text = String(totScore)
             default: break
             }
