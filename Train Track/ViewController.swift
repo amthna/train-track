@@ -12,10 +12,16 @@ import AudioToolbox
 
 class ViewController: UIViewController {
     
-    var pianoSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("buzza", ofType: "wav")!)
+    var pianoSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("horn", ofType: "wav")!)
     var pianoSound2 = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("horn2", ofType: "wav")!)
+    var pianoSound3 = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("erase", ofType: "wav")!)
+    var pianoSound4 = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("nope", ofType: "wav")!)
+    var pianoSound5 = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("clik", ofType: "wav")!)
+    var audioPlayer5 = AVAudioPlayer()
     var audioPlayer = AVAudioPlayer()
     var audioPlayer2 = AVAudioPlayer()
+    var audioPlayer3 = AVAudioPlayer()
+    var audioPlayer4 = AVAudioPlayer()
     
     //train images (for animations)
     @IBOutlet weak var tren1: UIImageView!
@@ -60,6 +66,12 @@ class ViewController: UIViewController {
         audioPlayer.prepareToPlay()
         audioPlayer2 = try! AVAudioPlayer(contentsOfURL: pianoSound2)
         audioPlayer2.prepareToPlay()
+        audioPlayer3 = try! AVAudioPlayer(contentsOfURL: pianoSound3)
+        audioPlayer3.prepareToPlay()
+        audioPlayer4 = try! AVAudioPlayer(contentsOfURL: pianoSound4)
+        audioPlayer4.prepareToPlay()
+        audioPlayer5 = try! AVAudioPlayer(contentsOfURL: pianoSound5)
+        audioPlayer5.prepareToPlay()
         
         // Do any additional setup after loading the view, typically from a nib.
         if (delegate.introw != true) {
@@ -74,6 +86,19 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func clak(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if (defaults.boolForKey("SwitchState") == true) {
+            if audioPlayer5.playing {
+                audioPlayer5.stop()
+                audioPlayer5.currentTime = 0.0
+                audioPlayer5.play()
+            } else {
+                audioPlayer5.play()
+            }
+            
+        }
+    }
     
     override func viewDidAppear(animated: Bool) {
         
@@ -107,18 +132,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func minus(sender: UIButton) {
-        var defaults = NSUserDefaults.standardUserDefaults()
-        
-        if (defaults.boolForKey("SwitchState") == true) {
-            if audioPlayer2.playing {
-                audioPlayer2.stop()
-                audioPlayer2.currentTime = 0.0
-                audioPlayer2.play()
-            } else {
-                audioPlayer2.play()
-            }
-            
-        }
         
         let digit = sender.currentTitle!
         
@@ -132,6 +145,19 @@ class ViewController: UIViewController {
                 x.transform =  CGAffineTransformMakeScale(0.5, 1)
                 x.transform =  CGAffineTransformMakeScale(1, 1)
             })
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            
+            if (defaults.boolForKey("SwitchState") == true) {
+                if audioPlayer2.playing {
+                    audioPlayer2.stop()
+                    audioPlayer2.currentTime = 0.0
+                    audioPlayer2.play()
+                } else {
+                    audioPlayer2.play()
+                }
+                
+            }
         }
         
         let dudePush = { (scorex: String) -> () in
@@ -236,6 +262,18 @@ class ViewController: UIViewController {
             score = z8
             scoreKeep(score)
             wobble(blah)
+        } else {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            if (defaults.boolForKey("SwitchState") == true) {
+                if audioPlayer4.playing {
+                    audioPlayer4.stop()
+                    audioPlayer4.currentTime = 0.0
+                    audioPlayer4.play()
+                } else {
+                    audioPlayer4.play()
+                }
+                
+            }
         }
         
     }
@@ -250,6 +288,19 @@ class ViewController: UIViewController {
         z6.text = "0"
         z7.text = "0"
         z8.text = "0"
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if (defaults.boolForKey("SwitchState") == true) {
+            if audioPlayer3.playing {
+                audioPlayer3.stop()
+                audioPlayer3.currentTime = 0.0
+                audioPlayer3.play()
+            } else {
+                audioPlayer3.play()
+            }
+            
+        }
         
         UIView.animateWithDuration(0.4, animations: {
             self.dude.transform = CGAffineTransformMakeTranslation(-200, 0)

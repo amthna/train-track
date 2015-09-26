@@ -14,8 +14,11 @@
 		9E391D451B23AD8700B6C568 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E391D431B23AD8700B6C568 /* LaunchScreen.xib */; };
 		9E48A5261BB0E77F00203E91 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E48A5251BB0E77F00203E91 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		9E72B2611BA4B5EF006F65CA /* horn2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E72B2601BA4B5EF006F65CA /* horn2.wav */; };
-		9E72B2691BA8FC92006F65CA /* buzza.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E72B2681BA8FC92006F65CA /* buzza.wav */; };
 		9EBFF5B71B23FA26003C39DA /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */; };
+		9EDD9ECD1BB3B0C100EEA68E /* erase.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EDD9ECC1BB3B0C100EEA68E /* erase.wav */; settings = {ASSET_TAGS = (); }; };
+		9EDD9ED11BB3B56600EEA68E /* nope.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EDD9ED01BB3B56600EEA68E /* nope.wav */; settings = {ASSET_TAGS = (); }; };
+		9EDD9ED31BB3B5DD00EEA68E /* clik.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EDD9ED21BB3B5DD00EEA68E /* clik.wav */; settings = {ASSET_TAGS = (); }; };
+		9EDD9ED51BB3C23500EEA68E /* horn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EDD9ED41BB3C23500EEA68E /* horn.wav */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +43,11 @@
 		9E391D441B23AD8700B6C568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "../../Tix 2 Ryde/Tix 2 Ryde/Base.lproj/LaunchScreen.xib"; sourceTree = "<group>"; };
 		9E48A5251BB0E77F00203E91 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 		9E72B2601BA4B5EF006F65CA /* horn2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = horn2.wav; path = ../../../Desktop/horn2.wav; sourceTree = "<group>"; };
-		9E72B2681BA8FC92006F65CA /* buzza.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = buzza.wav; path = ../../../Desktop/buzza.wav; sourceTree = "<group>"; };
 		9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		9EDD9ECC1BB3B0C100EEA68E /* erase.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = erase.wav; path = ../../../Desktop/erase.wav; sourceTree = "<group>"; };
+		9EDD9ED01BB3B56600EEA68E /* nope.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = nope.wav; path = ../../../Desktop/nope.wav; sourceTree = "<group>"; };
+		9EDD9ED21BB3B5DD00EEA68E /* clik.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clik.wav; path = ../../../Desktop/clik.wav; sourceTree = "<group>"; };
+		9EDD9ED41BB3C23500EEA68E /* horn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = horn.wav; path = ../../../Desktop/horn.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				9E72B2601BA4B5EF006F65CA /* horn2.wav */,
-				9E72B2681BA8FC92006F65CA /* buzza.wav */,
+				9EDD9ED21BB3B5DD00EEA68E /* clik.wav */,
+				9EDD9ED41BB3C23500EEA68E /* horn.wav */,
+				9EDD9ED01BB3B56600EEA68E /* nope.wav */,
+				9EDD9ECC1BB3B0C100EEA68E /* erase.wav */,
 				9E391D201B23ABC400B6C568 /* AppDelegate.swift */,
 				9E391D221B23ABC400B6C568 /* ViewController.swift */,
 				9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */,
@@ -167,7 +176,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Andrew Mathena";
 				TargetAttributes = {
 					9E391D1A1B23ABC400B6C568 = {
@@ -208,7 +217,10 @@
 				9E48A5261BB0E77F00203E91 /* Images.xcassets in Resources */,
 				9E391D421B23AD7400B6C568 /* Main.storyboard in Resources */,
 				9E391D451B23AD8700B6C568 /* LaunchScreen.xib in Resources */,
-				9E72B2691BA8FC92006F65CA /* buzza.wav in Resources */,
+				9EDD9ED11BB3B56600EEA68E /* nope.wav in Resources */,
+				9EDD9ED51BB3C23500EEA68E /* horn.wav in Resources */,
+				9EDD9ECD1BB3B0C100EEA68E /* erase.wav in Resources */,
+				9EDD9ED31BB3B5DD00EEA68E /* clik.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +303,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -360,6 +373,7 @@
 				INFOPLIST_FILE = "Train Track/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amthna.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -374,6 +388,7 @@
 				INFOPLIST_FILE = "Train Track/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amthna.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -393,6 +408,7 @@
 				);
 				INFOPLIST_FILE = "Train TrackTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amthna.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Train Track.app/Train Track";
 			};
@@ -408,6 +424,7 @@
 				);
 				INFOPLIST_FILE = "Train TrackTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.amthna.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Train Track.app/Train Track";
 			};
