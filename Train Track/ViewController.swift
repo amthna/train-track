@@ -58,6 +58,25 @@ class ViewController: UIViewController {
     
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+        
+        override func viewWillAppear(animated: Bool) {
+            super.viewWillAppear(true)
+            
+            let name = "home"
+            
+            // The UA-XXXXX-Y tracker ID is loaded automatically from the
+            // GoogleService-Info.plist by the `GGLContext` in the AppDelegate.
+            // If you're copying this to an app just using Analytics, you'll
+            // need to configure your tracking ID here.
+            // [START screen_view_hit_swift]
+            let tracker = GAI.sharedInstance().defaultTracker
+            tracker.set(kGAIScreenName, value: name)
+            
+            let builder = GAIDictionaryBuilder.createScreenView()
+            tracker.send(builder.build() as [NSObject : AnyObject])
+            // [END screen_view_hit_swift]
+        }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -279,6 +298,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clear(sender: AnyObject) {
+        //GA
+        let anal_total: Int? = Int(totalScore.text!)
+        let analytic = Analytic(category: "Tracker", action: "Clear", value: anal_total!)
+        analytic.Analytic_Send()
+        
         totalScore.text = "0"
         z1.text = "0"
         z2.text = "0"

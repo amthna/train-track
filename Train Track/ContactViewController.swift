@@ -24,10 +24,32 @@ class ContactViewController: UIViewController {
     @IBOutlet weak var tomas_label: UILabel!
     @IBOutlet weak var setting_label: NSLayoutConstraint!
     @IBOutlet weak var settings: UILabel!
+    @IBOutlet weak var rate: UIButton!
+    @IBOutlet weak var email: UIButton!
+    @IBOutlet weak var url: UIButton!
+    
+        
+        override func viewWillAppear(animated: Bool) {
+            super.viewWillAppear(true)
+            
+            let name = "settings"
+            // The UA-XXXXX-Y tracker ID is loaded automatically from the
+            // GoogleService-Info.plist by the `GGLContext` in the AppDelegate.
+            // If you're copying this to an app just using Analytics, you'll
+            // need to configure your tracking ID here.
+            // [START screen_view_hit_swift]
+            let tracker = GAI.sharedInstance().defaultTracker
+            tracker.set(kGAIScreenName, value: name)
+            
+            let builder = GAIDictionaryBuilder.createScreenView()
+            tracker.send(builder.build() as [NSObject : AnyObject])
+            // [END screen_view_hit_swift]
+        }
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         audioPlayer5 = try! AVAudioPlayer(contentsOfURL: pianoSound5)
@@ -39,12 +61,17 @@ class ContactViewController: UIViewController {
 
         if (defaults.objectForKey("SwitchState") != nil) {
             tomas_switch.on = defaults.boolForKey("SwitchState")
+            
         } else {
             tomas_switch.on = false
+            
         }
         
         self.bro.transform = CGAffineTransformMakeTranslation(200, 0)
-        self.info.transform = CGAffineTransformMakeTranslation(-200, 0)
+        self.rate.transform = CGAffineTransformMakeTranslation(-200, 0)
+        self.url.transform = CGAffineTransformMakeTranslation(-200, 0)
+        self.email.transform = CGAffineTransformMakeTranslation(-200, 0)
+        
         self.thanks.alpha = 0.0
         self.tomas_switch.alpha = 0.0
         self.tomas_label.alpha = 0.0
@@ -71,8 +98,17 @@ class ContactViewController: UIViewController {
         
         if tomas_switch.on {
             defaults.setBool(true, forKey: "SwitchState")
+            
+            //GA
+            let analytic = Analytic(category: "Settings", action: "Sound On", value: nil)
+            analytic.Analytic_Send()
+            
         } else {
             defaults.setBool(false, forKey: "SwitchState")
+            
+            //GA
+            let analytic = Analytic(category: "Settings", action: "Sound Off", value: nil)
+            analytic.Analytic_Send()
         }
     }
     
@@ -81,7 +117,10 @@ class ContactViewController: UIViewController {
         
         UIView.animateWithDuration(0.4, animations: {
             self.bro.transform = CGAffineTransformMakeTranslation(0, 0)
-            self.info.transform = CGAffineTransformMakeTranslation(0, 0)
+         //   self.info.transform = CGAffineTransformMakeTranslation(0, 0)
+            self.rate.transform = CGAffineTransformMakeTranslation(0, 0)
+            self.url.transform = CGAffineTransformMakeTranslation(0, 0)
+            self.email.transform = CGAffineTransformMakeTranslation(0, 0)
             self.tomas_label.alpha = 1.0
             self.tomas_switch.alpha = 1.0
             self.thanks.alpha = 1.0
@@ -95,7 +134,33 @@ class ContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func rate_click(sender: AnyObject) {
+        //GA
+        let analytic = Analytic(category: "Settings", action: "Rate Me Click", value: nil)
+        analytic.Analytic_Send()
+        
+            UIApplication.sharedApplication().openURL(NSURL(string : "https://itunes.apple.com/us/app/apple-store/id1003597505?mt=8")!);
+        
+    }
 
+    @IBAction func email_click(sender: AnyObject) {
+        //GA
+        let analytic = Analytic(category: "Settings", action: "Email Click", value: nil)
+        analytic.Analytic_Send()
+        
+        let email = "tre@naturebro.com"
+        let url = NSURL(string: "mailto:\(email)")
+        UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    @IBAction func url_click(sender: AnyObject) {
+        //GA
+        let analytic = Analytic(category: "Settings", action: "URL Click", value: nil)
+        analytic.Analytic_Send()
+        
+        UIApplication.sharedApplication().openURL(NSURL(string : "http://www.naturebro.com")!);
+    }
+   
     /*
     // MARK: - Navigation
 
