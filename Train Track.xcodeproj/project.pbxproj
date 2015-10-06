@@ -16,6 +16,7 @@
 		9E72B2611BA4B5EF006F65CA /* horn2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9E72B2601BA4B5EF006F65CA /* horn2.wav */; };
 		9EAB66E31BC09F360041F793 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB66E21BC09F360041F793 /* GoogleService-Info.plist */; settings = {ASSET_TAGS = (); }; };
 		9EAB66E81BC0CCA10041F793 /* Anal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB66E71BC0CCA10041F793 /* Anal.swift */; settings = {ASSET_TAGS = (); }; };
+		9EAB66EB1BC0E0440041F793 /* Train_Track.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB66E91BC0E0440041F793 /* Train_Track.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		9EBFF5B71B23FA26003C39DA /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */; };
 		9EDD9ECD1BB3B0C100EEA68E /* erase.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EDD9ECC1BB3B0C100EEA68E /* erase.wav */; settings = {ASSET_TAGS = (); }; };
 		9EDD9ED11BB3B56600EEA68E /* nope.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EDD9ED01BB3B56600EEA68E /* nope.wav */; settings = {ASSET_TAGS = (); }; };
@@ -51,6 +52,7 @@
 		9EAB66E21BC09F360041F793 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9EAB66E41BC0A1010041F793 /* Bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-header.h"; sourceTree = "<group>"; };
 		9EAB66E71BC0CCA10041F793 /* Anal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anal.swift; sourceTree = "<group>"; };
+		9EAB66EA1BC0E0440041F793 /* Train_Track.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Train_Track.xcdatamodel; sourceTree = "<group>"; };
 		9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		9EDD9ECC1BB3B0C100EEA68E /* erase.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = erase.wav; path = ../../../Desktop/erase.wav; sourceTree = "<group>"; };
 		9EDD9ED01BB3B56600EEA68E /* nope.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = nope.wav; path = ../../../Desktop/nope.wav; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				9EDD9ED01BB3B56600EEA68E /* nope.wav */,
 				9EDD9ECC1BB3B0C100EEA68E /* erase.wav */,
 				9E391D201B23ABC400B6C568 /* AppDelegate.swift */,
+				9EAB66E91BC0E0440041F793 /* Train_Track.xcdatamodeld */,
 				9E391D221B23ABC400B6C568 /* ViewController.swift */,
 				9EBFF5B61B23FA26003C39DA /* ContactViewController.swift */,
 				9EAB66E71BC0CCA10041F793 /* Anal.swift */,
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E391D231B23ABC400B6C568 /* ViewController.swift in Sources */,
+				9EAB66EB1BC0E0440041F793 /* Train_Track.xcdatamodeld in Sources */,
 				9EAB66E81BC0CCA10041F793 /* Anal.swift in Sources */,
 				9E391D211B23ABC400B6C568 /* AppDelegate.swift in Sources */,
 				9EBFF5B71B23FA26003C39DA /* ContactViewController.swift in Sources */,
@@ -532,6 +536,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9EAB66E91BC0E0440041F793 /* Train_Track.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9EAB66EA1BC0E0440041F793 /* Train_Track.xcdatamodel */,
+			);
+			currentVersion = 9EAB66EA1BC0E0440041F793 /* Train_Track.xcdatamodel */;
+			path = Train_Track.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9E391D131B23ABC400B6C568 /* Project object */;
 }

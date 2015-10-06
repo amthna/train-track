@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AudioToolbox
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -81,6 +82,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
         audioPlayer = try! AVAudioPlayer(contentsOfURL: pianoSound)
         audioPlayer.prepareToPlay()
         audioPlayer2 = try! AVAudioPlayer(contentsOfURL: pianoSound2)
@@ -101,6 +104,35 @@ class ViewController: UIViewController {
             self.bground_container.hidden = true
             self.logo.hidden = true
            // println("two")
+        }
+        
+        print(NSUserDefaults.standardUserDefaults().dictionaryRepresentation().keys);
+        if (defaults.stringForKey("totScore") != nil) {
+            totalScore.text = defaults.stringForKey("totScore")
+        }
+        if (defaults.stringForKey("z1") != nil) {
+            z1.text = defaults.stringForKey("z1")
+        }
+        if (defaults.stringForKey("z2") != nil) {
+            z2.text = defaults.stringForKey("z2")
+        }
+        if (defaults.stringForKey("z3") != nil) {
+            z3.text = defaults.stringForKey("z3")
+        }
+        if (defaults.stringForKey("z4") != nil) {
+            z4.text = defaults.stringForKey("z4")
+        }
+        if (defaults.stringForKey("z5") != nil) {
+            z5.text = defaults.stringForKey("z5")
+        }
+        if (defaults.stringForKey("z6") != nil) {
+            z6.text = defaults.stringForKey("z6")
+        }
+        if (defaults.stringForKey("z7") != nil) {
+            z7.text = defaults.stringForKey("z7")
+        }
+        if (defaults.stringForKey("z8") != nil) {
+            z8.text = defaults.stringForKey("z8")
         }
     }
     
@@ -206,38 +238,46 @@ class ViewController: UIViewController {
         func scoreKeep(x: UILabel) {
             friend = Int(x.text!)! - 1
             x.text = String(friend)
+            let defaults = NSUserDefaults.standardUserDefaults()
             
             switch x {
             case z1:
                 totScore = Int(totalScore.text!)! - 1
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z1")
             case z2:
                 totScore = Int(totalScore.text!)! - 2
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z2")
             case z3:
                 totScore = Int(totalScore.text!)! - 4
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z3")
             case z4:
                 totScore = Int(totalScore.text!)! - 7
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z4")
             case z5:
                 totScore = Int(totalScore.text!)! - 10
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z5")
             case z6:
                 totScore = Int(totalScore.text!)! - 15
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z6")
             case z7:
                 totScore = Int(totalScore.text!)! - 18
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z7")
             case z8:
                 totScore = Int(totalScore.text!)! - 21
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z8")
             default: break
             }
             
             dudePush(totalScore.text!)
             
-
             
         }
         
@@ -314,6 +354,17 @@ class ViewController: UIViewController {
         z8.text = "0"
         
         let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setValue("0", forKey: "totScore")
+        defaults.setValue("0", forKey: "z1")
+        defaults.setValue("0", forKey: "z2")
+        defaults.setValue("0", forKey: "z3")
+        defaults.setValue("0", forKey: "z4")
+        defaults.setValue("0", forKey: "z5")
+        defaults.setValue("0", forKey: "z6")
+        defaults.setValue("0", forKey: "z7")
+        defaults.setValue("0", forKey: "z8")
+        
         
         if (defaults.boolForKey("SwitchState") == true) {
             if audioPlayer3.playing {
@@ -405,31 +456,40 @@ class ViewController: UIViewController {
             case z1:
                 totScore = Int(totalScore.text!)! + 1
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z1")
             case z2:
                 totScore = Int(totalScore.text!)! + 2
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z2")
             case z3:
                 totScore = Int(totalScore.text!)! + 4
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z3")
             case z4:
                 totScore = Int(totalScore.text!)! + 7
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z4")
             case z5:
                 totScore = Int(totalScore.text!)! + 10
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z5")
             case z6:
                 totScore = Int(totalScore.text!)! + 15
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z6")
             case z7:
                 totScore = Int(totalScore.text!)! + 18
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z7")
             case z8:
                 totScore = Int(totalScore.text!)! + 21
                 totalScore.text = String(totScore)
+                defaults.setValue(friend, forKey: "z8")
             default: break
             }
             
             dudePush(totalScore.text!)
+            defaults.setValue(totScore, forKey: "totScore")
             
         }
         
