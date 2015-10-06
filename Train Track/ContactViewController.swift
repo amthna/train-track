@@ -95,19 +95,31 @@ class ContactViewController: UIViewController {
     @IBAction func togg(sender: UISwitch) {
         
         let defaults = NSUserDefaults.standardUserDefaults()
+
+        if (defaults.boolForKey("SwitchState") == false) {
+            if audioPlayer5.playing {
+                audioPlayer5.stop()
+                audioPlayer5.currentTime = 0.0
+                audioPlayer5.play()
+            } else {
+                audioPlayer5.play()
+            }
+            
+        }
+
         
         if tomas_switch.on {
             defaults.setBool(true, forKey: "SwitchState")
             
             //GA
-            let analytic = Analytic(category: "Settings", action: "Sound On", value: nil)
+            let analytic = Analytic(category: "Settings", action: "Sound On", label: nil)
             analytic.Analytic_Send()
             
         } else {
             defaults.setBool(false, forKey: "SwitchState")
             
             //GA
-            let analytic = Analytic(category: "Settings", action: "Sound Off", value: nil)
+            let analytic = Analytic(category: "Settings", action: "Sound Off", label: nil)
             analytic.Analytic_Send()
         }
     }
@@ -135,8 +147,20 @@ class ContactViewController: UIViewController {
     }
     
     @IBAction func rate_click(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if (defaults.boolForKey("SwitchState") == true) {
+            if audioPlayer5.playing {
+                audioPlayer5.stop()
+                audioPlayer5.currentTime = 0.0
+                audioPlayer5.play()
+            } else {
+                audioPlayer5.play()
+            }
+            
+        }
+
         //GA
-        let analytic = Analytic(category: "Settings", action: "Rate Me Click", value: nil)
+        let analytic = Analytic(category: "Settings", action: "Rate Me Click", label: nil)
         analytic.Analytic_Send()
         
             UIApplication.sharedApplication().openURL(NSURL(string : "https://itunes.apple.com/us/app/apple-store/id1003597505?mt=8")!);
@@ -144,8 +168,20 @@ class ContactViewController: UIViewController {
     }
 
     @IBAction func email_click(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if (defaults.boolForKey("SwitchState") == true) {
+            if audioPlayer5.playing {
+                audioPlayer5.stop()
+                audioPlayer5.currentTime = 0.0
+                audioPlayer5.play()
+            } else {
+                audioPlayer5.play()
+            }
+            
+        }
+
         //GA
-        let analytic = Analytic(category: "Settings", action: "Email Click", value: nil)
+        let analytic = Analytic(category: "Settings", action: "Email Click", label: nil)
         analytic.Analytic_Send()
         
         let email = "tre@naturebro.com"
@@ -154,8 +190,20 @@ class ContactViewController: UIViewController {
     }
     
     @IBAction func url_click(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if (defaults.boolForKey("SwitchState") == true) {
+            if audioPlayer5.playing {
+                audioPlayer5.stop()
+                audioPlayer5.currentTime = 0.0
+                audioPlayer5.play()
+            } else {
+                audioPlayer5.play()
+            }
+            
+        }
+
         //GA
-        let analytic = Analytic(category: "Settings", action: "URL Click", value: nil)
+        let analytic = Analytic(category: "Settings", action: "URL Click", label: nil)
         analytic.Analytic_Send()
         
         UIApplication.sharedApplication().openURL(NSURL(string : "http://www.naturebro.com")!);

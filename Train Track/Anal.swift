@@ -11,17 +11,17 @@ import Foundation
 class Analytic {
     var category: String
     var action: String
-    var value: NSNumber?
+    var label: String?
     
-    init(category: String, action: String, value: NSNumber?) {
+    init(category: String, action: String, label: String?) {
         self.category = category
         self.action = action
-        self.value = value
+        self.label = label
     }
     
     func Analytic_Send() {
         let tracker = GAI.sharedInstance().defaultTracker
-        tracker.send(GAIDictionaryBuilder.createEventWithCategory(self.category, action: self.action, label: nil, value: self.value).build() as [NSObject : AnyObject])
+        tracker.send(GAIDictionaryBuilder.createEventWithCategory(self.category, action: self.action, label: self.label, value: nil).build() as [NSObject : AnyObject])
     }
 
 }

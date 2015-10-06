@@ -106,7 +106,6 @@ class ViewController: UIViewController {
            // println("two")
         }
         
-        print(NSUserDefaults.standardUserDefaults().dictionaryRepresentation().keys);
         if (defaults.stringForKey("totScore") != nil) {
             totalScore.text = defaults.stringForKey("totScore")
         }
@@ -339,8 +338,8 @@ class ViewController: UIViewController {
     
     @IBAction func clear(sender: AnyObject) {
         //GA
-        let anal_total: Int? = Int(totalScore.text!)
-        let analytic = Analytic(category: "Tracker", action: "Clear", value: anal_total!)
+        let anal_total = totalScore.text
+        let analytic = Analytic(category: "Tracker", action: "Clear", label: anal_total!)
         analytic.Analytic_Send()
         
         totalScore.text = "0"
